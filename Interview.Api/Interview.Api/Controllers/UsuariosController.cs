@@ -17,105 +17,109 @@ namespace Interview.Api.Controllers
     {
         private SatrackDBEntities db = new SatrackDBEntities();
 
+        /// <summary>
+        /// Pemtire obtener los usuarios registrados en satrack
+        /// </summary>
+        /// <returns>Retorna una lista de objetos del tipo Usuario</returns>
         // GET: api/Usuarios
         public IQueryable<Usuarios> GetUsuarios()
         {
             return db.Usuarios;
         }
 
-        // GET: api/Usuarios/5
-        [ResponseType(typeof(Usuarios))]
-        public async Task<IHttpActionResult> GetUsuarios(Guid id)
-        {
-            Usuarios usuarios = await db.Usuarios.FindAsync(id);
-            if (usuarios == null)
-            {
-                return NotFound();
-            }
+        //// GET: api/Usuarios/5
+        //[ResponseType(typeof(Usuarios))]
+        //public async Task<IHttpActionResult> GetUsuarios(Guid id)
+        //{
+        //    Usuarios usuarios = await db.Usuarios.FindAsync(id);
+        //    if (usuarios == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(usuarios);
-        }
+        //    return Ok(usuarios);
+        //}
 
-        // PUT: api/Usuarios/5
-        [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutUsuarios(Guid id, Usuarios usuarios)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// PUT: api/Usuarios/5
+        //[ResponseType(typeof(void))]
+        //public async Task<IHttpActionResult> PutUsuarios(Guid id, Usuarios usuarios)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (id != usuarios.Id)
-            {
-                return BadRequest();
-            }
+        //    if (id != usuarios.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            db.Entry(usuarios).State = EntityState.Modified;
+        //    db.Entry(usuarios).State = EntityState.Modified;
 
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsuariosExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await db.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!UsuariosExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
 
-        // POST: api/Usuarios
-        [ResponseType(typeof(Usuarios))]
-        public async Task<IHttpActionResult> PostUsuarios(Usuarios usuarios)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// POST: api/Usuarios
+        //[ResponseType(typeof(Usuarios))]
+        //public async Task<IHttpActionResult> PostUsuarios(Usuarios usuarios)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            db.Usuarios.Add(usuarios);
+        //    db.Usuarios.Add(usuarios);
 
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (UsuariosExists(usuarios.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await db.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateException)
+        //    {
+        //        if (UsuariosExists(usuarios.Id))
+        //        {
+        //            return Conflict();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return CreatedAtRoute("DefaultApi", new { id = usuarios.Id }, usuarios);
-        }
+        //    return CreatedAtRoute("DefaultApi", new { id = usuarios.Id }, usuarios);
+        //}
 
-        // DELETE: api/Usuarios/5
-        [ResponseType(typeof(Usuarios))]
-        public async Task<IHttpActionResult> DeleteUsuarios(Guid id)
-        {
-            Usuarios usuarios = await db.Usuarios.FindAsync(id);
-            if (usuarios == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Usuarios/5
+        //[ResponseType(typeof(Usuarios))]
+        //public async Task<IHttpActionResult> DeleteUsuarios(Guid id)
+        //{
+        //    Usuarios usuarios = await db.Usuarios.FindAsync(id);
+        //    if (usuarios == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            db.Usuarios.Remove(usuarios);
-            await db.SaveChangesAsync();
+        //    db.Usuarios.Remove(usuarios);
+        //    await db.SaveChangesAsync();
 
-            return Ok(usuarios);
-        }
+        //    return Ok(usuarios);
+        //}
 
         protected override void Dispose(bool disposing)
         {

@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Entities\EventoDto.cs" />
     <Compile Include="Models\Posiciones.cs">
       <DependentUpon>SatrackDBContext.tt</DependentUpon>
     </Compile>
