@@ -1,0 +1,29 @@
+{
+  "siteName": {
+    "value": "InterviewApi"
+  },
+  "hostingPlanName": {
+    "value": "ProductionPlan"
+  },
+  "siteLocation": {
+    "value": "North Central US"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "siteMode": {
+    "value": "Limited"
+  },
+  "computeMode": {
+    "value": "0"
+  },
+  "subscriptionId": {
+    "value": "74ef4d41-be1e-4f37-9a13-ad6e4f6e20dc"
+  },
+  "resourceGroup": {
+    "value": "Production-Resources"
+  }
+}
