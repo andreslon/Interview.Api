@@ -17,8 +17,8 @@ namespace Interview.Data.Models
         public System.Guid Id { get; set; }
         public Nullable<System.Guid> IdUsuario { get; set; }
         public string Placa { get; set; }
-        public Nullable<decimal> Latitud { get; set; }
-        public Nullable<decimal> Longitud { get; set; }
+        public string Latitud { get; set; }
+        public string Longitud { get; set; }
         public string Descripcion { get; set; }
         public Nullable<System.DateTime> FechaReporte { get; set; }
     

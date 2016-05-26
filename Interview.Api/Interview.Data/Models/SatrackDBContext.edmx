@@ -12,8 +12,8 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="IdUsuario" Type="uniqueidentifier" />
           <Property Name="Placa" Type="varchar" MaxLength="200" />
-          <Property Name="Latitud" Type="decimal" Precision="9" Scale="6" />
-          <Property Name="Longitud" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="Latitud" Type="varchar" MaxLength="200" />
+          <Property Name="Longitud" Type="varchar" MaxLength="200" />
           <Property Name="Descripcion" Type="varchar" MaxLength="200" />
           <Property Name="FechaReporte" Type="smalldatetime" />
         </EntityType>
@@ -64,8 +64,8 @@
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="IdUsuario" Type="Guid" />
           <Property Name="Placa" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Latitud" Type="Decimal" Precision="9" Scale="6" />
-          <Property Name="Longitud" Type="Decimal" Precision="9" Scale="6" />
+          <Property Name="Latitud" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Longitud" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="FechaReporte" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Usuarios" Relationship="SatrackDBModel.FK_Posiciones_Usuarios" FromRole="Posiciones" ToRole="Usuarios" />

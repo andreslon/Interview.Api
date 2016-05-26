@@ -19,6 +19,8 @@ namespace Interview.Api
                 routeTemplate: "api/{controller}/{idusuario}",
                 defaults: new { idusuario = RouteParameter.Optional }
             );
+            var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
+            config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
         }
     }
 }
