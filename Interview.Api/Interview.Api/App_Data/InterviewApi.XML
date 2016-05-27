@@ -491,7 +491,7 @@
             <summary>
             Permite obtener los vehiculos de un usuario con su respectiva información de posicionamiento
             </summary>
-            <param name="id">Id del usuario</param>
+            <param name="idusuario">Id del usuario</param>
             <returns>Retorna una lista de tipo posiciones, compuesta por la cantidad de vehiculos pertenecientes a un usuario</returns>
         </member>
         <member name="M:Interview.Api.Controllers.VehiculosController.PostEvento(Interview.Data.Models.Entities.EventoDto)">

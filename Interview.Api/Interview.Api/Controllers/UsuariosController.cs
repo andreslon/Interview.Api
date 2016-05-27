@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Interview.Data.Models;
+using Interview.Data.Models.Entities;
 
 namespace Interview.Api.Controllers
 {
@@ -22,9 +23,9 @@ namespace Interview.Api.Controllers
         /// </summary>
         /// <returns>Retorna una lista de objetos del tipo Usuario</returns>
         // GET: api/Usuarios
-        public IQueryable<Usuarios> GetUsuarios()
+        public List<UsuarioDto> GetUsuarios()
         {
-            return db.Usuarios;
+            return Data.Helpers.UsuarioHelper.GetUsuarios();
         }
 
         //// GET: api/Usuarios/5

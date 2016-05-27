@@ -21,12 +21,12 @@ namespace Interview.Api.Controllers
         /// <summary>
         /// Permite obtener los vehiculos de un usuario con su respectiva información de posicionamiento
         /// </summary>
-        /// <param name="id">Id del usuario</param>
+        /// <param name="idusuario">Id del usuario</param>
         /// <returns>Retorna una lista de tipo posiciones, compuesta por la cantidad de vehiculos pertenecientes a un usuario</returns>
         [ResponseType(typeof(Posiciones))]
         public async Task<IHttpActionResult> GetPosiciones(Guid idusuario)
         {
-            List<Posiciones> posiciones = await db.Posiciones.Where(x => x.IdUsuario == idusuario).ToListAsync();
+            var posiciones= await Data.Helpers.PosicionHelper.GetPosiciones(idusuario);
             if (posiciones == null)
             {
                 return NotFound();
